@@ -5,7 +5,7 @@ Show certificate info for start date, end date and serial
     $ show_cert_info.sh <site.com>
 
 
-# Run script downloading repo
+# Run script from repo
     $ curl -s https://raw.githubusercontent.com/ura718/certinfo/main/show_cert_info.sh | bash -s <site.com>
 
 
