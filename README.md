@@ -1,5 +1,5 @@
-# certinfo
-Show certificate info
+# Certificate information
+Show certificate info for start date, end date and serial
 
 # Usage
     $ show_cert_info.sh <site.com>
