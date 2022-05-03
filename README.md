@@ -6,4 +6,4 @@ Show certificate info
 
 
 # Run script downloading repo
-    $ curl ...
+    $ curl https://raw.githubusercontent.com/ura718/certinfo/main/show_cert_info.sh <site.com>
