@@ -12,5 +12,5 @@ Show certificate info for start date, end date and serial
 # Setup alias in .bashrc for easy use
     $ vi .bashrc
 
-    alias checkcert='curl -s https://raw.githubusercontent.com/ura718/certinfo/main/show_cert_info.sh | bash -s $1'
+    alias certinfo='curl -s https://raw.githubusercontent.com/ura718/certinfo/main/show_cert_info.sh | bash -s $1'
 
