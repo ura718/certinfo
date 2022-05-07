@@ -3,7 +3,7 @@
 #
 # Author: Yuri Medvinsky
 # Date: 05-03-2022
-# Info: quick check certificates start date, end date, serial
+# Info: quick check certificates start date, end date, tls version, serial
 
 
 if [ -z "$1" ]
