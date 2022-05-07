@@ -50,7 +50,7 @@ echo "-------------------"
 printf "Name:       $1 \n"
 printf "Start Date: $cert_start_date \n"
 printf "End Date:   $cert_end_date \n"
-printf "Serial:     $cert_serial \n"
 printf "TLS(1,2):   $tls1_1 $tls1_2 \n"
+printf "Serial:     $cert_serial \n"
 echo "-------------------"
 
