@@ -25,11 +25,32 @@ cert_end_date=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $
 cert_serial=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -serial | cut -d '=' -f2 )
 
 
+# -------------------------------
+# Verify TLS certificate versions
+# -------------------------------
+# TLS1.1
+TLS1_1=$(echo -n | openssl 2>/dev/null s_client -connect $1:443 -tls1_1 > /dev/null)
+if [ $? -eq 0 ]; then
+  tls1_1=TLS1.1
+else
+  tls1_1=''
+fi
+
+
+# TLS1.2
+TLS1_2=$(echo -n | openssl 2>/dev/null s_client -connect $1:443 -tls1_2 > /dev/null)
+if [ $? -eq 0 ]; then
+  tls1_2=TLS1.2
+else
+  tls1_2=''
+fi
+
 
 echo "-------------------"
 printf "Name:       $1 \n"
 printf "Start Date: $cert_start_date \n"
 printf "End Date:   $cert_end_date \n"
 printf "Serial:     $cert_serial \n"
+printf "TLS(1,2):   $tls1_1 $tls1_2 \n"
 echo "-------------------"
 
