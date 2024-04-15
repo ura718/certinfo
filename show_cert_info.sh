@@ -17,11 +17,11 @@ fi
 
 
 # Show cert expiration
-cert_start_date=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -startdate | cut -d '=' -f2- )
-cert_end_date=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -enddate | cut -d '=' -f2- )
+cert_start_date=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -startdate -in /dev/stdin | cut -d '=' -f2- )
+cert_end_date=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -enddate -in /dev/stdin | cut -d '=' -f2- )
 
 # Show cert serial
-cert_serial=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -serial | cut -d '=' -f2 )
+cert_serial=$(echo -n | openssl 2>/dev/null s_client -servername $1 -connect $1:443 | openssl x509 -noout -serial -in /dev/stdin | cut -d '=' -f2 )
 
 
 # -------------------------------
